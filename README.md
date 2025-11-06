@@ -20,8 +20,6 @@ Restore your editor exactly as you left it
 
 - 🔧 Fully configurable and lazy-load friendly
 
-- 🧘 Built with zero external dependencies
-
 # 🚀 Installation
 
 Lazy:
