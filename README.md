@@ -27,7 +27,7 @@ Lazy:
 ```lua
 {
     "paradoxical-dev/restoration.nvim",
-    event = "BufReadPre", -- optional but recommended
+    event = "VeryLazy", -- optional but recommended
     opts = {
         -- optional config here
     }
