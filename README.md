@@ -38,7 +38,7 @@ Packer:
 
 ```lua
 use {
-    "olimorris/restoration.nvim",
+    "paradoxical-dev/restoration.nvim",
     config = function()
         require("restoration").setup({
             -- optional config here
