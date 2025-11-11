@@ -68,7 +68,7 @@ require("restoration").setup({
 		qflist = false, -- requires quickfix.nvim
 		undo = false,
 		watches = false, -- requires dap-utils.nvim
-      folds = false,
+        folds = false,
 	},
 	branch_scope = true, -- store per branch sessions for git repos
 	-- detects and adds venv to vim.env,PATH before loading session
