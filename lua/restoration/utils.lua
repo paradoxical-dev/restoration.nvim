@@ -79,6 +79,11 @@ M.load_session = function(session_path, project, extras, branch)
 	local name = vim.fn.fnamemodify(session_path, ":t")
 	local session_file = vim.fn.fnameescape(session_path .. "/" .. name .. ".vim")
 
+	-- close all buffers before loading new session
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		vim.api.nvim_buf_delete(buf, { force = true })
+	end
+
 	if branch and M.branch_scope then
 		M.switch_branch(project, branch)
 	end
@@ -97,6 +102,9 @@ M.load_session = function(session_path, project, extras, branch)
 			require("quickfix").restore(session_path .. "/quickfix")
 		end
 		if k == "undo" and v == true then
+			if not vim.fn.filereadable(session_path .. "/undo") then
+				vim.notify("No undo history to restore", vim.log.levels.INFO)
+			end
 			vim.cmd("rundo " .. vim.fn.fnameescape(session_path) .. "/undo")
 		end
 		if k == "watches" and v == true then
