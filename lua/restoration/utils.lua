@@ -104,8 +104,9 @@ M.load_session = function(session_path, project, extras, branch)
 		if k == "undo" and v == true then
 			if not vim.fn.filereadable(session_path .. "/undo") then
 				vim.notify("No undo history to restore", vim.log.levels.INFO)
+			else
+				vim.cmd("rundo " .. vim.fn.fnameescape(session_path) .. "/undo")
 			end
-			vim.cmd("rundo " .. vim.fn.fnameescape(session_path) .. "/undo")
 		end
 		if k == "watches" and v == true then
 			require("dap-utils").restore_watches(session_path .. "/watches")

@@ -68,6 +68,7 @@ require("restoration").setup({
 		qflist = false, -- requires quickfix.nvim
 		undo = false,
 		watches = false, -- requires dap-utils.nvim
+      folds = false,
 	},
 	branch_scope = true, -- store per branch sessions for git repos
 	-- detects and adds venv to vim.env,PATH before loading session
@@ -179,6 +180,7 @@ If enabled within the config, restoration can restore the following extras:
 - 🐞 `nvim-dap` breakpoints & watches
 - ❗ Quickfix list
 - ⏪ Undo history (:rundo)
+- 🔽 Folds
 
 See [Optional Dependencies](#optional-dependencies) section for more info on requirements
 
